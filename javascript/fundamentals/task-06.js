@@ -15,10 +15,17 @@ orders.forEach((order) => {
     if(order.paid === true){
         paidOrders++;
         sum += order.total
-    }
     if (biggestOrder === null) {
-        biggestOrder = order
-     if (order.total > biggestOrder.total) {
-
-    }}
-})
+        biggestOrder = order}
+    else {
+        if (order.total > biggestOrder.total) {
+            biggestOrder = order;
+        }
+    }
+}})
+const statistics = {
+    paidOrders,
+    totalRevenue: sum,
+    biggestOrder
+};
+console.log(statistics)
